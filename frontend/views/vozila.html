@@ -1,0 +1,99 @@
+<div class="container">
+    <section class="page-header">
+        <span class="eyebrow">Odaberite svoj sljedeći automobil</span>
+        <h1>Vozila</h1>
+        <p>Pogledajte ponudu provjerenih automobila. Sva vozila imaju garanciju i servisnu historiju.</p>
+    </section>
+    
+    <section class="filters">
+  <h2>Pretraga vozila</h2>
+  <div class="filter-row">
+    <select id="filter-brand">
+      <option value="all">Sve marke</option>
+      <option value="volkswagen">Volkswagen</option>
+      <option value="audi">Audi</option>
+      <option value="bmw">BMW</option>
+      <option value="skoda">Škoda</option>
+    </select>
+
+    <select id="filter-fuel">
+      <option value="all">Sva goriva</option>
+      <option value="dizel">Dizel</option>
+      <option value="benzin">Benzin</option>
+      <option value="hibrid">Hibrid</option>
+    </select>
+
+    <select id="filter-price">
+      <option value="all">Sve cijene</option>
+      <option value="10000">Do 10.000 KM</option>
+      <option value="20000">Do 20.000 KM</option>
+      <option value="30000">Do 30.000 KM</option>
+    </select>
+  </div>
+</section>
+
+<section class="car-list">
+  <h2>Dostupna vozila</h2>
+
+  <div class="cards">
+
+    <article class="card car" data-brand="volkswagen" data-fuel="dizel" data-price="14900">
+      <div class="vehicle-visual">VOLKSWAGEN</div>
+      <h3>Volkswagen Golf 7</h3>
+      <p>Pouzdan i ekonomičan gradski automobil, odlično održavan.</p>
+      <ul class="specs">
+        <li>Godina: 2017.</li>
+        <li>Motor: 1.6 TDI</li>
+        <li>Kilometraža: 120.000 km</li>
+        <li>Mjenjač: Manuelni</li>
+      </ul>
+      <span class="price">14.900 KM</span>
+      <a href="#kontakt" class="btn">Zainteresiran sam</a>
+    </article>
+
+    <article class="card car" data-brand="audi" data-fuel="dizel" data-price="22500">
+      <div class="vehicle-visual vehicle-visual--audi">AUDI</div>
+      <h3>Audi A4</h3>
+      <p>Udoban i prostran, idealan za duža putovanja.</p>
+      <ul class="specs">
+        <li>Godina: 2018.</li>
+        <li>Motor: 2.0 TDI</li>
+        <li>Kilometraža: 135.000 km</li>
+        <li>Mjenjač: Automatik</li>
+      </ul>
+      <span class="price">22.500 KM</span>
+      <a href="#kontakt" class="btn">Zainteresiran sam</a>
+    </article>
+
+    <article class="card car" data-brand="bmw" data-fuel="benzin" data-price="28900">
+      <div class="vehicle-visual vehicle-visual--bmw">BMW</div>
+      <h3>BMW 320i</h3>
+      <p>Sportski karakter uz bogatu opremu i odlične performanse.</p>
+      <ul class="specs">
+        <li>Godina: 2019.</li>
+        <li>Motor: 2.0 benzin</li>
+        <li>Kilometraža: 90.000 km</li>
+        <li>Mjenjač: Automatik</li>
+      </ul>
+      <span class="price">28.900 KM</span>
+      <a href="#kontakt" class="btn">Zainteresiran sam</a>
+    </article>
+
+    <article class="card car" data-brand="skoda" data-fuel="benzin" data-price="9800">
+      <div class="vehicle-visual vehicle-visual--skoda">ŠKODA</div>
+      <h3>Škoda Fabia</h3>
+      <p>Povoljan i štedljiv, odličan izbor za početnike.</p>
+      <ul class="specs">
+        <li>Godina: 2014.</li>
+        <li>Motor: 1.2 TSI</li>
+        <li>Kilometraža: 150.000 km</li>
+        <li>Mjenjač: Manuelni</li>
+      </ul>
+      <span class="price">9.800 KM</span>
+      <a href="#kontakt" class="btn">Zainteresiran sam</a>
+    </article>
+
+  </div>
+
+  <p id="no-results" hidden>Nema vozila koja odgovaraju pretrazi.</p>
+</section>

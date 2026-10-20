@@ -1,6 +1,0 @@
-# WebProgrammingAdnan
-
-Hello, everyone
-
-
-
