@@ -1,59 +1,66 @@
 <!doctype html>
-<html lang="bs" class="no-js">
+<html lang="en" class="no-js">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto salon Plaza | Provjerena vozila</title>
-    <meta name="description" content="Pronađite provjeren automobil uz podršku auto salona Plaza. Pregledajte ponudu, financiranje i kontakt informacije.">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Responsive HTML5 Page Layout Template</title>
+    <meta name="description" content="Simple HTML5 Page layout template with header, footer, sidebar etc.">
 
 
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/spapp.css">
 
-    <script defer src="./assets/js/jquery.min.js"></script>
-    <script defer src="./assets/js/jquery.spapp.min.js"></script>
-    <script defer src="./assets/js/script.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/jquery.spapp.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 
 </head>
 
 <body>
     <header>
-        <nav class="site-nav" aria-label="Glavna navigacija">
-            <a class="brand" href="#pocetna" aria-label="Plaza, početna stranica">PLAZA<span>.</span></a>
+        <nav role="navigation">
             <ul>
-                <li><a href="#pocetna">Početna</a></li>
-                <li><a href="#vozila">Vozila</a></li>
-                <li><a href="#financiranje">Financiranje</a></li>
-                <li><a href="#mojalista">Mojalista</a></li>
-                <li><a href="#ponuda">Ponuda</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="#page1">page 1</a>
+                    <li><a href="#page2">page 2</a>
+                        <li><a href="#page3">page 3</a>
             </ul>
         </nav>
     </header>
 
     <section id="pageContent">
         <main id="spapp" role="main">
-            <section id="pocetna" data-load="pocetna.html">
+            <section id="page1" data-load="page1.html">
+                <h1>Page 1</h1>
             </section>
-            <section id="vozila" data-load="vozila.html">
+            <section id="page2" data-load="page2.html">
+                <h1>Page 2</h1>
             </section>
-            <section id="financiranje" data-load="financiranje.html">
+            <section id="page3" data-load="page3.html">
+                <h1>Page 3</h1>
             </section>
-            <section id="mojalista" data-load="mojalista.html">
-            </section>
-            <section id="ponuda" data-load="ponuda.html">
-            </section>
-            <section id="kontakt" data-load="kontakt.html">
-            </section>
-
-            
         </main>
     </section>
     <footer>
-        <p>&copy; <span id="year">2026</span> Auto salon Plaza. Sva prava zadržana.</p>
+        <p>&copy; You can copy, edit and publish this template but please leave a link to our website | <a href="https://html5-templates.com/" target="_blank" rel="nofollow">HTML5 Templates</a></p>
+        <address>
+			Contact: <a href="mailto:me@example.com">Mail me</a>
+		</address>
     </footer>
+
+
+    <script>
+        var app = $.spapp({
+            defaultView: "#page1",
+            templateDir: "./views/"
+
+        });
+
+
+        app.run();
+    </script>
 </body>
 
 </html>
