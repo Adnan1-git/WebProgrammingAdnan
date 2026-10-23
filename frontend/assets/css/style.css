@@ -18,6 +18,22 @@
 
 }
 
+
+.car-card {
+
+    .car-image {
+    width: 40%;
+    height: 80px;
+    overflow: hidden;
+}
+
+.car-image img {
+    width: 40%;
+    height: 60%;
+    object-fit: cover;
+    display: block;
+}
+}
 * {
     box-sizing: border-box;
 }
