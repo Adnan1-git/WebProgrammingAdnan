@@ -5,6 +5,6 @@ class ContactMessageDao extends BaseDao
 {
     public function __construct()
     {
-        parent::__construct('contact_messages', ['ime', 'email', 'poruka']);
+        parent::__construct('contact_messages', ['ime', 'email', 'poruka','datum']);
     }
 }

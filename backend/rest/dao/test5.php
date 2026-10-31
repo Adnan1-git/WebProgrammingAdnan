@@ -9,10 +9,10 @@ $vehicleDao = new VehicleDao();
 $userDao = new UserDao();
 $dao = new WishlistDao();
 
-// Priprema podataka (PROMIJENI kolone)
-$brand = $brandDao->add(['name' => 'Test brand']);
-$vehicle = $vehicleDao->add(['brand_id' => $brand['id'], 'model' => 'Test model', 'price' => 10000]);
-$user = $userDao->add(['first_name' => 'Test', 'last_name' => 'User', 'email' => 'wish@plaza.ba', 'password' => '123456']);
+
+$brand = $brandDao->add(['naziv' => 'Test brand' .time()]); // Dodaj timestamp kako bi naziv bio jedinstven
+$vehicle = $vehicleDao->add(['brand_id' => $brand['id']]);
+$user = $userDao->add(['ime' => 'Test', 'prezime' => 'User','email' => 'wish' . time() . '@plaza.ba','lozinka' => '123456']);
 
 $item = $dao->add(['user_id' => $user['id'], 'vehicle_id' => $vehicle['id']]);
 echo "CREATE:\n"; print_r($item);

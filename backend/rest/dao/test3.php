@@ -5,13 +5,13 @@ require_once __DIR__ . '/VehicleDao.php';
 $brandDao = new BrandDao();
 $dao = new VehicleDao();
 
-$brand = $brandDao->add(['name' => 'Test brand']);
+$brand = $brandDao->add(['naziv' => 'Test brand']);
 
 // PROMIJENI kolone prema schema.sql
 $vehicle = $dao->add([
     'brand_id' => $brand['id'],
     'model'    => 'Test model',
-    'price'    => 10000
+    'cijena'    => 10000
 ]);
 echo "CREATE:\n"; print_r($vehicle);
 

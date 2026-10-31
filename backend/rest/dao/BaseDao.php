@@ -35,7 +35,7 @@ class BaseDao
 
 
     /** Run a SELECT and return all rows. */
-    protected function query($query, $params = [])
+    public function query($query, $params = [])
     {
         $stmt = self::connection()->prepare($query);
         $stmt->execute($params);
@@ -49,13 +49,6 @@ class BaseDao
         return $results[0] ?? null;
     }
 
-    /** Run INSERT/UPDATE/DELETE and return the number of affected rows. */
-    protected function execute($query, $params = [])
-    {
-        $stmt = self::connection()->prepare($query);
-        $stmt->execute($params);
-        return $stmt->rowCount();
-    }
 
 
 
@@ -71,18 +64,22 @@ class BaseDao
     }
 
     /** INSERT INTO categories (name, description) VALUES (:name, :description) */
+    
+
     public function add($entity)
-    {
-        $entity = $this->only_columns($entity);
-        $columns = array_keys($entity);
+{
+    $entity = $this->only_columns($entity);
+    $columns = array_keys($entity);
 
-        $query = "INSERT INTO {$this->table_name} (" . implode(', ', $columns) . ")"
-               . " VALUES (:" . implode(', :', $columns) . ")";
-        $this->execute($query, $entity);
+    $query = "INSERT INTO " . $this->table_name .
+             " (" . implode(', ', $columns) . ")" .
+             " VALUES (:" . implode(', :', $columns) . ")";
 
-        $entity['id'] = (int) self::connection()->lastInsertId();
-        return $entity;
-    }
+    $this->execute($query, $entity);
+
+    $entity['id'] = (int) self::connection()->lastInsertId();
+    return $entity;
+}
 
     /** UPDATE categories SET name = :name, description = :description WHERE id = :id */
     public function update($entity, $id)
@@ -119,6 +116,15 @@ class BaseDao
     {
         return array_intersect_key($entity, array_flip($this->columns));
     }
+
+    protected function execute($query, $params = [])
+{
+    $stmt = self::connection()->prepare($query);
+    $stmt->execute($params);
+    return $stmt->rowCount();
+}
+
+
 
 
     

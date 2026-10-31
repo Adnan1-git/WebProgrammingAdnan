@@ -5,6 +5,7 @@ class BrandDao extends BaseDao
 {
     public function __construct()
     {
-        parent::__construct('brands', ['naziv']);
+        parent::__construct('brands', ['id', 'naziv']);
+      
     }
 }

@@ -5,7 +5,7 @@ class CategoryDao extends BaseDao
 {
     public function __construct()
     {
-        parent::__construct('categories', ['name', 'description']);
+        parent::__construct('categories', ['id', 'name', 'description']);
     }
 }
 
