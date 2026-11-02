@@ -34,4 +34,18 @@ class RegistrationDao extends BaseDao
             ['user_id' => $user_id]
         )['total'];
     }
+
+
+    public function count_upcoming_by_user($user_id)
+{
+    $row = $this->query_unique(
+        "SELECT COUNT(*) AS total
+         FROM {$this->table_name} r
+         JOIN events e ON e.id = r.event_id
+         WHERE r.user_id = :user_id AND e.event_date >= NOW()",
+        ['user_id' => $user_id]
+    );
+    return (int) $row['total'];
+}
+
 }
