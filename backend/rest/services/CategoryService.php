@@ -5,6 +5,7 @@ require_once __DIR__ . '/../dao/EventDao.php';
 
 class CategoryService extends BaseService
 {
+    private $current_id = null;
     protected $entity_name = 'Category';
     private $event_dao;
 
@@ -36,18 +37,24 @@ class CategoryService extends BaseService
         $this->dao->delete($id);
     }
 
-    protected function validate($category, $id = null)
-    {
-        Validator::required($category, ['name']);
+    
+
+    protected function validate(array $category, bool $partial): void
+{
+    $this->require($category, ['name'], $partial);
+
+    if (isset($category['name'])) {
         Validator::length($category['name'], 'name', 2, 60);
-        if (!empty($category['description'])) {
-            Validator::length($category['description'], 'description', 0, 255);
-        }
 
         // Rule: category names are unique
         $existing = $this->dao->get_by_name(trim($category['name']));
-        if ($existing && $existing['id'] != $id) {
+        if ($existing && $existing['id'] != $this->current_id) {
             throw new ValidationException("A category named '{$category['name']}' already exists.");
         }
     }
+
+    if (!empty($category['description'])) {
+        Validator::length($category['description'], 'description', 0, 255);
+    }
+}
 }

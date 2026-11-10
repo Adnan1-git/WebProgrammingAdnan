@@ -45,5 +45,16 @@ class Validator
         }
     }
 
+
+    public static function password($password): void
+{
+    if (!is_string($password) || strlen($password) < 8) {
+        throw new Exception('Password must be at least 8 characters long.', 400);
+    }
+    if (!preg_match('/[A-Za-z]/', $password) || !preg_match('/\d/', $password)) {
+        throw new Exception('Password must contain at least one letter and one number.', 400);
+    }
+}
+
     // ... email(), date(), datetime() and password() follow the same pattern
 }

@@ -2,6 +2,7 @@
 class BaseService
 {
     protected $dao;
+    protected $entity_name = 'Entity';
 
     public function __construct($dao)
     {
@@ -87,4 +88,53 @@ class BaseService
             throw new Exception("Field '$field' must be one of: " . implode(', ', $allowed) . '.', 400);
         }
     }
+
+
+    protected function empty_to_null(array $data): array
+{
+    foreach ($data as $key => $value) {
+        if ($value === '') {
+            $data[$key] = null;
+        }
+    }
+    return $data;
+}
+
+
+public function add(array $data)
+{
+    $data = $this->empty_to_null($data);
+    $this->validate($data, false);          // false = full validation (all required fields)
+    return $this->dao->insert($data);
+}
+
+public function get_by_id($id)
+{
+    if (!ctype_digit((string)$id) || (int)$id <= 0) {
+        throw new Exception('Invalid ID.', 400);
+    }
+
+    $row = $this->dao->getById((int)$id);
+
+    if (!$row) {
+        throw new Exception($this->entity_name . ' not found.', 404);
+    }
+    return $row;
+}
+
+
+protected function validate1(array $data, bool $partial): void
+{
+    $this->require($data, ['title', 'category_id', 'date'], $partial);
+    $this->positiveInt($data, 'category_id');
+    // your other Event rules here
+}
+
+
+public function get_all()
+{
+    return $this->dao->get_all();
+}
+
+
 }

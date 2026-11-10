@@ -54,7 +54,7 @@ class EventService extends BaseService
         return $this->dao->search(trim($term));
     }
 
-    protected function validate($event, $id = null)
+    protected function validate(array $event, bool $partial): void
     {
         Validator::required($event, ['title', 'event_date', 'category_id']);
         Validator::length($event['title'], 'title', 2, 120);
