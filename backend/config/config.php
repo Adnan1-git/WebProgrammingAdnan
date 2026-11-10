@@ -13,4 +13,10 @@ class Config
         $value = getenv($name);
         return ($value !== false && trim($value) !== '') ? $value : $default;
     }
+
+
+    public static function API_NINJAS_KEY()
+{
+    return getenv('API_NINJAS_KEY') ?: 'PUT_YOUR_KEY_HERE';
+}
 }
