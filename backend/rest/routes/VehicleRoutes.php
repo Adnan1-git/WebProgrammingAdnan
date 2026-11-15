@@ -60,7 +60,7 @@ Flight::route('POST /vehicles', function () {
  * )
  */
 Flight::route('PUT /vehicles/@id', function ($id) {
-    BaseRoutes::handle(fn() => (new VehicleService())->update($id, BaseRoutes::body()));
+    BaseRoutes::handle(fn() => (new VehicleService())->update($id, BaseRoutes::body()),200);
 });
 
 /**

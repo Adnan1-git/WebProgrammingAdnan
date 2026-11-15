@@ -60,7 +60,7 @@ Flight::route('POST /financing-requests', function () {
  * )
  */
 Flight::route('PUT /financing-requests/@id', function ($id) {
-    BaseRoutes::handle(fn() => (new FinancingRequestService())->update($id, BaseRoutes::body()));
+    BaseRoutes::handle(fn() => (new FinancingRequestService())->update($id, BaseRoutes::body()),404);
 });
 
 /**

@@ -5,8 +5,7 @@ require_once __DIR__ . '/VehicleDao.php';
 $brandDao = new BrandDao();
 $dao = new VehicleDao();
 
-$brand = $brandDao->add(['naziv' => 'Test brand']);
-
+$brand = $brandDao->add(['naziv' => 'Test brand ' . time()]);
 // PROMIJENI kolone prema schema.sql
 $vehicle = $dao->add([
     'brand_id' => $brand['id'],

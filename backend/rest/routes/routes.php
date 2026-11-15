@@ -9,3 +9,4 @@ require_once __DIR__ . '/RegistrationRoutes.php';
 require_once __DIR__ . '/UserRoutes.php';
 require_once __DIR__ . '/VehicleRoutes.php';
 require_once __DIR__ . '/WishlistRoutes.php';
+require_once __DIR__ . '/WeatherRoutes.php';

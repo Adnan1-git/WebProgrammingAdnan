@@ -60,7 +60,7 @@ Flight::route('POST /inquiries', function () {
  * )
  */
 Flight::route('PUT /inquiries/@id', function ($id) {
-    BaseRoutes::handle(fn() => (new InquiryService())->update($id, BaseRoutes::body()));
+    BaseRoutes::handle(fn() => (new InquiryService())->update($id, BaseRoutes::body()),404);
 });
 
 /**

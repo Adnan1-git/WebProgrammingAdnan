@@ -60,7 +60,7 @@ Flight::route('POST /registrations', function () {
  * )
  */
 Flight::route('PUT /registrations/@id', function ($id) {
-    BaseRoutes::handle(fn() => (new RegistrationService())->update($id, BaseRoutes::body()));
+    BaseRoutes::handle(fn() => (new RegistrationService())->update($id, BaseRoutes::body()),500);
 });
 
 /**

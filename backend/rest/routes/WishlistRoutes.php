@@ -44,6 +44,8 @@ Flight::route('GET /wishlist/@id', function ($id) {
  */
 Flight::route('POST /wishlist', function () {
     BaseRoutes::handle(fn() => (new WishlistService())->add(BaseRoutes::body()), 201);
+    BaseRoutes::handle(fn() => (new WishlistService())->add(BaseRoutes::body()), 400);
+
 });
 
 /**
@@ -60,7 +62,9 @@ Flight::route('POST /wishlist', function () {
  * )
  */
 Flight::route('PUT /wishlist/@id', function ($id) {
-    BaseRoutes::handle(fn() => (new WishlistService())->update($id, BaseRoutes::body()));
+    BaseRoutes::handle(fn() => (new WishlistService())->update($id, BaseRoutes::body()),200);
+        BaseRoutes::handle(fn() => (new WishlistService())->update($id, BaseRoutes::body()),500);
+
 });
 
 /**

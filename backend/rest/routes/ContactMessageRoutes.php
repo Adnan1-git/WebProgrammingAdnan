@@ -44,6 +44,8 @@ Flight::route('GET /contact-messages/@id', function ($id) {
  */
 Flight::route('POST /contact-messages', function () {
     BaseRoutes::handle(fn() => (new ContactMessageService())->add(BaseRoutes::body()), 201);
+        BaseRoutes::handle(fn() => (new ContactMessageService())->add(BaseRoutes::body()), 500);
+
 });
 
 /**
@@ -60,7 +62,9 @@ Flight::route('POST /contact-messages', function () {
  * )
  */
 Flight::route('PUT /contact-messages/@id', function ($id) {
-    BaseRoutes::handle(fn() => (new ContactMessageService())->update($id, BaseRoutes::body()));
+    BaseRoutes::handle(fn() => (new ContactMessageService())->update($id, BaseRoutes::body()),404);
+        BaseRoutes::handle(fn() => (new ContactMessageService())->update($id, BaseRoutes::body()),200);
+
 });
 
 /**
