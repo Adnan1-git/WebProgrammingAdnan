@@ -3,7 +3,7 @@ require_once __DIR__ . '/BrandDao.php';
 
 $dao = new BrandDao();
 
-$brand = $dao->add(['naziv' => 'Test brand']); // PROMIJENI kolone
+$brand = $dao->add(['naziv' => 'Test brand ' . time()]);
 echo "CREATE:\n"; print_r($brand);
 
 /*
