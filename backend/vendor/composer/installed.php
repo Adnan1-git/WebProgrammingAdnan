@@ -3,7 +3,7 @@
         'name' => 'ibu/campusevents-backend',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'b5b74f738771b06723a19ff94be5dc7f289662d1',
+        'reference' => '218312ed45911a9a694ea90e74091de1f41e2c63',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -73,6 +73,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'firebase/php-jwt' => array(
+            'pretty_version' => 'v7.0.0',
+            'version' => '7.0.0.0',
+            'reference' => 'c03036fd5dbd530a95406ca3b5f6d7b24eaa3910',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../firebase/php-jwt',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'flightphp/core' => array(
             'pretty_version' => 'v3.19.5',
             'version' => '3.19.5.0',
@@ -85,7 +94,7 @@
         'ibu/campusevents-backend' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'b5b74f738771b06723a19ff94be5dc7f289662d1',
+            'reference' => '218312ed45911a9a694ea90e74091de1f41e2c63',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

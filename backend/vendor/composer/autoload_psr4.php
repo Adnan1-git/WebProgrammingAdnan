@@ -31,6 +31,7 @@ return array(
     'OpenApi\\Rector\\' => array($vendorDir . '/zircote/swagger-php/rector/src'),
     'OpenApi\\' => array($vendorDir . '/zircote/swagger-php/src'),
     'League\\Container\\' => array($vendorDir . '/league/container/src'),
+    'Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),
     'Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
     'Cake\\Utility\\' => array($vendorDir . '/cakephp/utility'),
     'Cake\\Event\\' => array($vendorDir . '/cakephp/event'),

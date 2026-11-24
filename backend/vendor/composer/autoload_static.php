@@ -64,6 +64,7 @@ class ComposerStaticInit2b54916f5cade035781e2119066c3bd3
         ),
         'F' =>
         array (
+            'Firebase\\JWT\\' => 13,
             'Faker\\' => 6,
         ),
         'C' =>
@@ -177,6 +178,10 @@ class ComposerStaticInit2b54916f5cade035781e2119066c3bd3
         'League\\Container\\' =>
         array (
             0 => __DIR__ . '/..' . '/league/container/src',
+        ),
+        'Firebase\\JWT\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
         'Faker\\' =>
         array (

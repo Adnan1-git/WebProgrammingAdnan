@@ -1,6 +1,10 @@
 <?php
 use OpenApi\Attributes as OA;
 
+
+
+
+
 #[OA\Info(
     title: 'CampusEvents API',
     description: 'REST API of CampusEvents – student events at IBU – IT 2001 Web Programming.',
